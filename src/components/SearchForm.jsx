@@ -19,11 +19,18 @@ function SearchForm(props) {
         changeMode(false);
     }
 
+    function handleSearch(event) {
+      event.preventDefault(); 
+      props.onSearch(searchTitle); 
+      updateSearchTitle(""); 
+      endInput();
+    }
+
     return (
       <div className="search">
-        <form className="create-note">
-          <input onChange={handleChange} onClick={startInput} name="title" placeholder="Movie Title" value={searchTitle}/>
-          <Zoom in={inputMode}><Fab onClick={(event) => {event.preventDefault(); props.onSearch(searchTitle); updateSearchTitle(""); endInput()}}><SearchIcon/></Fab></Zoom>
+        <form className="search-form" onSubmit={handleSearch}>
+          <input onChange={handleChange} onClick={startInput} onBlur={endInput} name="title" placeholder="Movie Title" value={searchTitle}/>
+          <Zoom in={inputMode}><Fab onClick={handleSearch}><SearchIcon/></Fab></Zoom>
         </form>
       </div>
     );
