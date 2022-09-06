@@ -53,7 +53,7 @@ function App() {
     }
 
     function navigatePrevPage() {
-      if (pageState.currentPage > 0) {
+      if (pageState.currentPage > 1) {
         axios.get("http://www.omdbapi.com/?apikey="+ omdbApiKey +"&", {params: {s: currentSearch, type: "movie", page: pageState.currentPage-1}}).then((res) => {
         if (res.data.Response !== "False") {
           setResults(res.data.Search);
