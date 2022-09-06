@@ -113,3 +113,12 @@
     cursor: pointer;
     outline: none;
   }
+
+  .page-nav {
+    margin: 10px auto 10px auto;
+  }
+
+  .page-nav p {
+    display: inline-block;
+    margin: auto 5px auto 5px;
+  }
