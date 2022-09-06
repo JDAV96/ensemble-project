@@ -22,7 +22,12 @@ function App() {
             totalPages: totalPages
           })
         } 
-        console.log(res);
+        else {
+          setResults([]);
+          setPageState({
+            currentPage: 0, totalPages: 0
+          });
+        }
       });
     }
 
@@ -36,8 +41,13 @@ function App() {
             currentPage: pageState.currentPage+1,
             totalPages: totalPages
           });
+        }
+        else {
+          setResults([]);
+          setPageState({
+            currentPage: 0, totalPages: 0
+          });
         } 
-        console.log(res);
         });
       }
     }
@@ -52,8 +62,13 @@ function App() {
             currentPage: pageState.currentPage-1,
             totalPages: totalPages
           });
+        }
+        else {
+          setResults([]);
+          setPageState({
+            currentPage: 0, totalPages: 0
+          });
         } 
-        console.log(res);
         });
       }
     }
@@ -68,7 +83,12 @@ function App() {
             totalPages: totalPages
           });
         } 
-        console.log(res);
+        else {
+          setResults([]);
+          setPageState({
+            currentPage: 0, totalPages: 0
+          });
+        }
       });
     }
 
@@ -82,15 +102,19 @@ function App() {
             totalPages: totalPages
           });
         } 
-        console.log(res);
+        else {
+          setResults([]);
+          setPageState({
+            currentPage: 0, totalPages: 0
+          });
+        }
       });
     }
 
     return <div>
     <Header onSearch={handleSearch}/>
     {pageState.currentPage > 0 && <PageNav pageState={pageState} onNext={navigateNextPage} onPrev={navigatePrevPage} onFirst={navigateToFirstPage} onLast={navigateToLastPage}/>}
-    {searchResults !== undefined && <Results searchResults={searchResults}/>}
-    {/* <Footer /> */}
+    {searchResults === undefined || pageState.currentPage === 0 ? <Footer /> : <Results searchResults={searchResults}/>}
     </div>
 }
 
