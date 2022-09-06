@@ -10,7 +10,12 @@ function App() {
 
     function handleSearch(searchTitle) {
       console.log(searchTitle);
-      axios.get("http://www.omdbapi.com/?apikey="+ omdbApiKey +"&", {params: {s: searchTitle}}).then((res) => {if (res.data.Response) {setResults(res.data.Search);} console.log(res);});
+      axios.get("http://www.omdbapi.com/?apikey="+ omdbApiKey +"&", {params: {s: searchTitle, type: "movie"}}).then((res) => {
+        if (res.data.Response) {
+          setResults(res.data.Search);
+        } 
+        console.log(res);
+      });
     }
 
     return <div><Header onSearch={handleSearch}/><Results searchResults={searchResults}/><Footer /></div>
