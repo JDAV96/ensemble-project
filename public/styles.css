@@ -122,3 +122,16 @@
     display: inline-block;
     margin: auto 5px auto 5px;
   }
+
+  .page-nav button {
+    background: #7124b5;
+    color: #fff;
+    border: none;
+    border-radius: 30%;
+    width: 50px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+    margin: auto 10px auto 10px;
+  }

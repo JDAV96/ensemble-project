@@ -1,12 +1,15 @@
 import React from "react";
+import Fab from '@mui/material/Fab';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function PageNav(props) {
     return <div className="page-nav">
-    <button onClick={props.onFirst}> First Page </button> 
-    <button onClick={props.onPrev}> Prev </button> 
+    <Fab onClick={props.onFirst}> First </Fab> 
+    <Fab onClick={props.onPrev}> <ArrowBackIcon /> </Fab> 
     <p> {props.pageState.currentPage} / {props.pageState.totalPages} </p>
-    <button onClick={props.onNext}> Next</button> 
-    <button onClick={props.onLast}>Last page</button></div>
+    <Fab onClick={props.onNext}> <ArrowForwardIcon /> </Fab> 
+    <Fab onClick={props.onLast}> Last </Fab></div>
 }
 
 export default PageNav;
