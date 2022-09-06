@@ -59,6 +59,7 @@
   }
   .movie-result p {
     font-size: 1.1em;
+    margin-top: 5px;
     margin-bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -80,6 +81,7 @@
     height: 36px;
     cursor: pointer;
     outline: none;
+    border-radius: 5%;
   }
   
   form.search-form {
