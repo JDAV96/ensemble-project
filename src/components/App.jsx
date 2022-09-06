@@ -113,7 +113,7 @@ function App() {
 
     return <div>
     <Header onSearch={handleSearch}/>
-    {pageState.currentPage > 0 && <PageNav pageState={pageState} onNext={navigateNextPage} onPrev={navigatePrevPage} onFirst={navigateToFirstPage} onLast={navigateToLastPage}/>}
+    {pageState.currentPage > 0 && <PageNav searchValue={currentSearch} pageState={pageState} onNext={navigateNextPage} onPrev={navigatePrevPage} onFirst={navigateToFirstPage} onLast={navigateToLastPage}/>}
     {searchResults === undefined || pageState.currentPage === 0 ? <Footer /> : <Results searchResults={searchResults}/>}
     </div>
 }

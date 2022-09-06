@@ -9,7 +9,9 @@ function PageNav(props) {
     <Fab onClick={props.onPrev}> <ArrowBackIcon /> </Fab> 
     <p> {props.pageState.currentPage} / {props.pageState.totalPages} </p>
     <Fab onClick={props.onNext}> <ArrowForwardIcon /> </Fab> 
-    <Fab onClick={props.onLast}> Last </Fab></div>
+    <Fab onClick={props.onLast}> Last </Fab>
+    <p> Showing Results For: "{props.searchValue}"</p>
+    </div>
 }
 
 export default PageNav;
