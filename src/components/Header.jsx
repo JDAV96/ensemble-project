@@ -1,10 +1,12 @@
 import React from "react";
-import HighlightIcon from '@mui/icons-material/Highlight';
+import TheatersIcon from '@mui/icons-material/Theaters';
 
-const appName = "Keeper";
+import SearchForm from "./SearchForm"
 
-function Header() {
-    return <header> <h1><HighlightIcon />{appName}</h1></header>
+const appName = "MovSearch";
+
+function Header(props) {
+    return <header><h1><TheatersIcon /> {appName}</h1> <SearchForm onSearch={props.onSearch}/></header>
 }
 
 export default Header;
