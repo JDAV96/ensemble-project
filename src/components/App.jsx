@@ -90,7 +90,8 @@ function App() {
     <Header onSearch={handleSearch}/>
     {pageState.currentPage > 0 && <PageNav pageState={pageState} onNext={navigateNextPage} onPrev={navigatePrevPage} onFirst={navigateToFirstPage} onLast={navigateToLastPage}/>}
     {searchResults !== undefined && <Results searchResults={searchResults}/>}
-    <Footer /></div>
+    {/* <Footer /> */}
+    </div>
 }
 
 export default App;
