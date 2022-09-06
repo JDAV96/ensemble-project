@@ -29,7 +29,7 @@ function App() {
     function navigateNextPage() {
       if (pageState.currentPage < pageState.totalPages) {
         axios.get("http://www.omdbapi.com/?apikey="+ omdbApiKey +"&", {params: {s: currentSearch, type: "movie", page: pageState.currentPage+1}}).then((res) => {
-        if (res.data.Response) {
+        if (res.data.Response !== "False") {
           setResults(res.data.Search);
           const totalPages = Math.ceil(res.data.totalResults/10);
           setPageState({
@@ -45,7 +45,7 @@ function App() {
     function navigatePrevPage() {
       if (pageState.currentPage > 0) {
         axios.get("http://www.omdbapi.com/?apikey="+ omdbApiKey +"&", {params: {s: currentSearch, type: "movie", page: pageState.currentPage-1}}).then((res) => {
-        if (res.data.Response) {
+        if (res.data.Response !== "False") {
           setResults(res.data.Search);
           const totalPages = Math.ceil(res.data.totalResults/10);
           setPageState({
@@ -60,7 +60,7 @@ function App() {
 
     function navigateToFirstPage() {
       axios.get("http://www.omdbapi.com/?apikey="+ omdbApiKey +"&", {params: {s: currentSearch, type: "movie", page: 1}}).then((res) => {
-        if (res.data.Response) {
+        if (res.data.Response !== "False") {
           setResults(res.data.Search);
           const totalPages = Math.ceil(res.data.totalResults/10);
           setPageState({
@@ -74,7 +74,7 @@ function App() {
 
     function navigateToLastPage() {
       axios.get("http://www.omdbapi.com/?apikey="+ omdbApiKey +"&", {params: {s: currentSearch, type: "movie", page: pageState.totalPages}}).then((res) => {
-        if (res.data.Response) {
+        if (res.data.Response !== "False") {
           setResults(res.data.Search);
           const totalPages = Math.ceil(res.data.totalResults/10);
           setPageState({
